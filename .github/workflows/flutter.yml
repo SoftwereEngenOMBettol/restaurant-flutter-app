@@ -28,3 +28,5 @@ jobs:
         run: flutter test
       - name: Build web release
         run: flutter build web --release
+      - name: Build Android debug APK
+        run: flutter build apk --debug
