@@ -16,7 +16,15 @@ jobs:
         with:
           channel: stable
           cache: true
-      - run: flutter pub get
-      - run: dart format lib test
-      - run: flutter analyze
-      - run: flutter test
+      - name: Generate platform runners
+        run: flutter create . --platforms=android,web --project-name=restaurant_flutter_app
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Format Dart files
+        run: dart format lib test
+      - name: Analyze
+        run: flutter analyze
+      - name: Run tests
+        run: flutter test
+      - name: Build web release
+        run: flutter build web --release
