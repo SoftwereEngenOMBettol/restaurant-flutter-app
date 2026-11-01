@@ -59,6 +59,7 @@ dart format lib test
 flutter analyze
 flutter test
 flutter build web --release
+flutter build apk --debug
 ```
 
 The GitHub Actions workflow runs these checks on every push and pull request. It generates the platform runner folders in the CI environment before running the checks.
