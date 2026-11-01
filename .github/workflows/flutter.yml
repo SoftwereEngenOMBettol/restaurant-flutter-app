@@ -17,7 +17,9 @@ jobs:
           channel: stable
           cache: true
       - name: Generate platform runners
-        run: flutter create . --platforms=android,web --project-name=restaurant_flutter_app
+        run: flutter create . --platforms=android,web --project-name=caffeine_cafe_mobile
+      - name: Remove generated sample test
+        run: rm -f test/widget_test.dart
       - name: Install dependencies
         run: flutter pub get
       - name: Format Dart files
